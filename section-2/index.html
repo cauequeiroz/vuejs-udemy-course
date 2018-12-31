@@ -6,20 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>VueJS</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      margin: 20px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    <button v-on:click="increase($event, 2)">+</button>
-    <button v-on:click="decrease">-</button>
+    <button @click="increase($event, 2)">+</button>
+    <button @click="decrease">-</button>
 
     {{ counter }}
 
-    <p v-on:mousemove="updateCoords">
-      Coords: {{ x }} - {{ y }} - <span v-on:mousemove.stop>DEAD SPOT</span>
+    <p @mousemove="updateCoords">
+      Coords: {{ x }} - {{ y }} - <span @mousemove.stop>DEAD SPOT</span>
     </p>
 
-    <input type="text" v-on:keyup.enter="alertMe">
+    <input type="text" @keyup.enter="alertMe">
+
+    <div class="box" :class="boxClasses" @click="activeRed = !activeRed"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
@@ -31,7 +49,15 @@
       data: {
         counter: 0,
         x: 0,
-        y: 0
+        y: 0,
+
+        activeRed: false
+      },
+
+      computed: {
+        boxClasses() {
+          return {red: this.activeRed, blue: !this.activeRed};
+        }
       },
 
       methods: {
