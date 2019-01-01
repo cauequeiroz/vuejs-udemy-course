@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+</head>
+
+<body>
+  <div id="app">
+    <template v-if="logged">
+      <h1>Welcome to our forum!</h1>
+      <p>Please enjoy your stay with us :)</p>
+    </template>
+    <template v-else>
+      <h1>Welcome Unknown!</h1>
+      <p>Please login by clicking at the Login Button below.</p>
+    </template>
+
+    <button @click="authUser">{{ logged ? 'Logout' : 'Login' }}</button>
+    <p v-show="logged">you are logged as guest.</p>
+
+    <hr>
+
+    <h1>Ingredients</h1>
+    <ul>
+      <li v-for="(ingredient, index) in ingredients">#{{ index + 1 }} {{ ingredient }}</li>
+    </ul>
+    <span v-for="number in 10">Number {{ number }} -> </span>
+
+    <ul>
+      <li v-for="person in users">
+        <div v-for="(value, key) in person">{{ key }}: {{ value }}</div>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <script>
+
+    new Vue({
+      el: '#app',
+
+      data: {
+        logged: false,
+        ingredients: ['banana', 'apple', 'grape', 'lemon'],
+        users: [
+          { name: 'Caue', age: 23, logged: true },
+          { name: 'Jessica', age: 21, logged: false}
+        ]
+      },
+
+      methods: {
+        authUser() {
+          this.logged = !this.logged;
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
