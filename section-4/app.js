@@ -8,10 +8,10 @@ new Vue({
   data: {
     started: false,
 
-    monster_health: 100,
-    hero_health: 100,
+    monsterHealth: 100,
+    heroHealth: 100,
 
-    battle_log: []
+    battleLog: []
   },
 
   methods: {
@@ -21,18 +21,18 @@ new Vue({
 
     endGame() {
       this.started = false;
-      this.hero_health = 100;
-      this.monster_health = 100;
-      this.battle_log = [];
+      this.heroHealth = 100;
+      this.monsterHealth = 100;
+      this.battleLog = [];
     },
 
     checkEndGame() {
-      if (this.hero_health <= 0) {
+      if (this.heroHealth <= 0) {
         alert('You lose!');
         this.endGame();
       }
 
-      if (this.monster_health <= 0) {
+      if (this.monsterHealth <= 0) {
         alert('You win!');
         this.endGame();
       }
@@ -49,17 +49,22 @@ new Vue({
     },
 
     heal() {
-      const amount = randomNumber(7, 10);    
+      let amount = randomNumber(7, 10);  
+      
+      if (this.heroHealth + amount > 100) {
+        amount -= ((this.heroHealth + amount) - 100);
+      }
+
       this.processTurn(0, amount);  
     },
 
     processTurn(heroDamage, heroHeal) {
       const monsterDamage = randomNumber(5, 8);
 
-      if (heroHeal) this.hero_health += heroHeal;
+      if (heroHeal) this.heroHealth += heroHeal;
 
-      this.hero_health -= monsterDamage;
-      this.monster_health -= heroDamage;
+      this.heroHealth -= monsterDamage;
+      this.monsterHealth -= heroDamage;
 
       const messages = {
         hero: heroDamage ? `Player hits monster for ${heroDamage}` : `Player heals himself for ${heroHeal}`,
@@ -71,7 +76,7 @@ new Vue({
     },
 
     updateBattleLog(messages) {
-      this.battle_log.unshift(messages);
+      this.battleLog.unshift(messages);
     }
   }
 })
