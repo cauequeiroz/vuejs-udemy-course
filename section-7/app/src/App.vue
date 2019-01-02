@@ -1,6 +1,6 @@
 <template>
   <div>
-    <counter v-for="item in 10"></counter>
+    <counter v-for="item in 10" :key="item"></counter>
   </div>
 </template>
 
