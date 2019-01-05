@@ -31,6 +31,14 @@
     .red { background-color: red; }
     .green { background-color: green; }
 
+    .class1 {
+      border: 2px solid grey;
+    }
+
+    .class2 {
+      width: 400px;
+    }
+
     .progress-wrapper {
       width: 500px;
       height: 50px;
@@ -55,7 +63,7 @@
     </div>
 
     <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-    <div :class="[highlight, bordered]">I got no class :(</div>
+    <div :class="[highlight, bordered, 'class1', 'class2']">I got no class :(</div>
 
     <!-- 3) Let the user enter a class (create some example classes) and attach it -->
     <div>
