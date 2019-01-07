@@ -2,13 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <quotes-counter></quotes-counter>
+        <quotes-counter :number="quotes.length"></quotes-counter>
       </div>
     </div>
 
     <div class="row mt-5">
       <div class="col-sm-12 col-md-6">
-        <quotes-edit></quotes-edit>
+        <quotes-edit @add="add"></quotes-edit>
       </div>
       <div class="col-sm-12 col-md-6">
         <quotes-list
@@ -37,14 +37,25 @@ export default {
         { id: 1, text: 'Cras justo odio' },
         { id: 2, text: 'Dapibus ac facilisis in' },
         { id: 3, text: 'Morbi leo risus' },
-        { id: 4, text: 'Porta ac consectetur ac' }
-      ]
+        { id: 4, text: 'Porta ac consectetur ac' },
+        { id: 5, text: 'Porta ac consectetur ac' },
+        { id: 6, text: 'Porta ac consectetur ac' },
+        { id: 7, text: 'Porta ac consectetur ac' },
+      ],
+      lastId: 7
     }
   },
 
   methods: {
     remove(id) {
       this.quotes = this.quotes.filter(i => i.id !== id);
+    },
+
+    add(text) {
+      this.quotes.push({
+        id: ++this.lastId,
+        text
+      });
     }
   }
 };
