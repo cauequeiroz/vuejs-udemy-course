@@ -52,10 +52,12 @@ export default {
     },
 
     add(text) {
-      this.quotes.push({
-        id: ++this.lastId,
-        text
-      });
+      if (this.quotes.length == 10) {
+        alert('Only 10 quotes per user, sorry.');
+        return;
+      }
+
+      this.quotes.push({ id: ++this.lastId, text });
     }
   }
 };
