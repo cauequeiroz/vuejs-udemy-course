@@ -19,7 +19,7 @@ Projects and exercises for [Vue JS 2 - The Complete Guide (incl. Vue Router & Vu
 - [x] Section 13
 - [ ] Section 14
 - [x] Section 15
-- [ ] Section 16
+- [x] Section 16
 - [ ] Section 17
 - [ ] Section 18
 - [ ] Section 19
