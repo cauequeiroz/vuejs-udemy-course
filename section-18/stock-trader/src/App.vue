@@ -8,8 +8,7 @@
 
     <div class="row mt-5">
       <div class="col-sm-12">
-        <!-- <home></home> -->
-        <stock></stock>
+        <router-view></router-view>
       </div>
     </div>
 
@@ -22,17 +21,13 @@
 </template>
 
 <script>
-import Header from './components/include/Header.vue'
-import Footer from './components/include/Footer.vue'
-import Home from './components/Home.vue'
-import Stock from './components/Stock.vue'
+import Header from './components/structure/Header.vue'
+import Footer from './components/structure/Footer.vue'
 
 export default {
   components: {
     'app-header': Header,
-    'app-footer': Footer,
-    Home,
-    Stock
+    'app-footer': Footer
   }
 }
 </script>
