@@ -15,5 +15,9 @@ export default {
     state.wallet.map(stock => {
       if (stock.name == name) stock.quantity += quantity;
     });
+  },
+
+  WITHDRAW_FUNDS: (state, value) => {
+    state.funds -= value;
   }
 }

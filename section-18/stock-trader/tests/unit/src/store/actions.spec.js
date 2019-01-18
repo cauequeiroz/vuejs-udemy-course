@@ -34,6 +34,7 @@ describe('buy', () => {
 
     expect(commit.mock.calls).toEqual([
       ['ERROR_RESET'],
+      ['WITHDRAW_FUNDS', stock.price * quantity],
       ['ADD_ORDER', { ...stock, quantity }]
     ]);
   });
@@ -53,6 +54,7 @@ describe('buy', () => {
 
     expect(commit.mock.calls).toEqual([
       ['ERROR_RESET'],
+      ['WITHDRAW_FUNDS', stock.price * quantity],
       ['UPDATE_ORDER', { name: stock.name, quantity }]
     ]);
   });

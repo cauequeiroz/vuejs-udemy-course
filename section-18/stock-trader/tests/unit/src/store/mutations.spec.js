@@ -1,6 +1,12 @@
 import mutations from '@/store/mutations'
 
-const { ERROR_NOT_ENOUGH_MONEY, ADD_ORDER, UPDATE_ORDER, ERROR_RESET } = mutations;
+const {
+  ERROR_NOT_ENOUGH_MONEY,
+  ADD_ORDER,
+  UPDATE_ORDER,
+  ERROR_RESET,
+  WITHDRAW_FUNDS
+} = mutations;
 
 describe('smoke tests', () => {
   it('should exists a ERROR_NOT_ENOUGH_MONEY method', () => {
@@ -17,6 +23,10 @@ describe('smoke tests', () => {
 
   it('should exists a ERROR_RESET method', () => {
     expect(ERROR_RESET).toBeDefined();
+  });
+
+  it('should exists a WITHDRAW_FUNDS method', () => {
+    expect(WITHDRAW_FUNDS).toBeDefined();
   });
 });
 
@@ -79,5 +89,15 @@ describe('UPDATE_ORDER', () => {
         expect.objectContaining({ ...stock, quantity: 10 })
       ])
     );
+  })
+})
+
+describe('WITHDRAW_FUNDS', () => {
+  it('should remove operation cost from user funds', () => {
+    const state = { funds: 5000 };
+
+    WITHDRAW_FUNDS(state, 2500);
+    
+    expect(state.funds).toBe(2500);
   })
 })
