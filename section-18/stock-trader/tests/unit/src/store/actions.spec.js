@@ -1,10 +1,14 @@
 import actions from '@/store/actions'
 
-const { buy } = actions;
+const { buy, sell } = actions;
 
 describe('smoke tests', () => {
   it('should exists a "buy" method', () => {
     expect(buy).toBeDefined();
+  })
+
+  it('should exists a "sell" method', () => {
+    expect(sell).toBeDefined();
   })
 });
 
@@ -77,3 +81,7 @@ describe('buy', () => {
     ]);
   });
 });
+
+describe('sell', () => {
+  
+})

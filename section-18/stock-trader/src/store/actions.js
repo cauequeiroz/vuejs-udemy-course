@@ -19,5 +19,9 @@ export default {
     } else {
       commit('ADD_ORDER', { ...stock, quantity });    
     }    
+  },
+
+  sell: ({ commit, state }, payload) => {
+    
   }
 }
