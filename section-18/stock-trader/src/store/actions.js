@@ -8,6 +8,8 @@ export default {
       return;
     }
 
+    commit('ERROR_RESET');
+
     const alreadyHasStock = wallet.some(item => item.name == stock.name );
     
     if (alreadyHasStock) {

@@ -8,6 +8,8 @@ export default {
     { name: 'INTC', company: 'Intel Corporation', price: 48.54 }
   ],
 
+  error: null,
+
   funds: 10000.02,
 
   wallet: []

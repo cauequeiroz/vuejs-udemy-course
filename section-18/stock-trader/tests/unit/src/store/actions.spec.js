@@ -33,6 +33,7 @@ describe('buy', () => {
     buy({ commit, state }, { stock, quantity });
 
     expect(commit.mock.calls).toEqual([
+      ['ERROR_RESET'],
       ['ADD_ORDER', { ...stock, quantity }]
     ]);
   });
@@ -51,6 +52,7 @@ describe('buy', () => {
     buy({ commit, state }, { stock, quantity });
 
     expect(commit.mock.calls).toEqual([
+      ['ERROR_RESET'],
       ['UPDATE_ORDER', { name: stock.name, quantity }]
     ]);
   });
