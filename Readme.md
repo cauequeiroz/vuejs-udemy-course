@@ -5,7 +5,7 @@ Projects and exercises for [Vue - The Complete Guide (w/ Router, Vuex, Compositi
 ## Progress
 
 - [x] Section 1
-- [ ] Section 2
+- [x] Section 2
 - [ ] Section 3
 - [ ] Section 4
 - [ ] Section 5
