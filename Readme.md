@@ -8,10 +8,10 @@ Projects and exercises for [Vue - The Complete Guide (w/ Router, Vuex, Compositi
 - [x] Section 2
 - [x] Section 3
 - [x] Section 4
-- [ ] Section 5
-- [ ] Section 6
-- [ ] Section 7
-- [ ] Section 8
+- [x] Section 5
+- [x] Section 6
+- [x] Section 7
+- [x] Section 8
 - [ ] Section 9
 - [ ] Section 10
 - [ ] Section 11
