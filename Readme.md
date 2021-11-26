@@ -14,9 +14,9 @@ Projects and exercises for [Vue - The Complete Guide (w/ Router, Vuex, Compositi
 - [x] Section 8
 - [x] Section 9
 - [x] Section 10
-- [ ] Section 11
-- [ ] Section 12
-- [ ] Section 13
+- [x] Section 11
+- [x] Section 12
+- [x] Section 13
 - [ ] Section 14
 - [ ] Section 15
 - [ ] Section 16
